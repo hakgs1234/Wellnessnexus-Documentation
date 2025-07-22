@@ -190,7 +190,7 @@ This project is licensed under the MIT License.
 - 📧 Email: wellnessnuxes@gmail.com
 - 📱 Phone: +92 317 7990549 | +92 340 9834157
 - 🔗 [LinkedIn – SiriHive](https://www.linkedin.com/company/sirihive/)
-- 🧠 [GitHub – SiriHive](https://github.com/izhansajid)
+- 🧠 [GitHub – SiriHive](https://github.com/sirihive/sirihive)
 
 ---
 
