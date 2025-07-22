@@ -50,10 +50,13 @@
 
 ## 🖥️ System Architecture
 
+
+## 🖥️ System Architecture
+
 ```mermaid
-graph TD;
-  A[User] -->|Uploads Image| B(Frontend)
-  B -->|Send Request| C(Flask Backend)
+graph TD
+  A[User] -->|Uploads Image| B[Frontend]
+  B -->|Send Request| C[Flask Backend]
   C -->|Preprocess| D1[Malaria Model (Keras)]
   C -->|Preprocess| D2[Leukemia Model (PyTorch)]
   D1 -->|Predict| E[Results Handler]
