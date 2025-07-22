@@ -50,22 +50,7 @@
 
 ## 🖥️ System Architecture
 
-
-## 🖥️ System Architecture
-
-```mermaid
-graph TD
-  A[User] -->|Uploads Image| B[Frontend]
-  B -->|Send Request| C[Flask Backend]
-  C -->|Preprocess| D1[Malaria Model (Keras)]
-  C -->|Preprocess| D2[Leukemia Model (PyTorch)]
-  D1 -->|Predict| E[Results Handler]
-  D2 -->|Predict| E
-  E -->|Generate| F[PDF Report]
-  F -->|Download| A
-  C -->|Authenticate| G[Firebase]
-```
-
+![System Architecture](https://github.com/hakgs1234/Wellnessnexus-Documentation/blob/main/system.png)
 ---
 
 ## 🧬 AI Model Details
