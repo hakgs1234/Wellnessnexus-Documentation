@@ -1,5 +1,5 @@
 # WellnessNexus 🚀🩸  
-![WellnessNexus Banner](static/img/Welllness.png)
+![WellnessNexus Banner](https://github.com/hakgs1234/Wellnessnexus-Documentation/blob/main/white%20logo.png)
 
 ---
 
