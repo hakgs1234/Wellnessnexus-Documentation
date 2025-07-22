@@ -1,5 +1,4 @@
-# WellnessNexus 🚀🩸
-
+# WellnessNexus 🚀🩸  
 ![WellnessNexus Banner](static/img/Welllness.png)
 
 ---
@@ -13,31 +12,31 @@
 
 ---
 
-# 🌟 Project Overview
+## 🌟 Project Overview
 
-**WellnessNexus** is a next-generation web platform revolutionizing medical diagnostics through AI-powered disease detection. It focuses on early identification of **Malaria** and **Leukemia** by analyzing blood cell images, making advanced healthcare accessible to everyone.
+**WellnessNexus** is an AI-powered web platform designed to revolutionize digital healthcare by providing intelligent diagnostics for **Malaria** and **Leukemia** through blood cell image analysis. Our mission is to make expert-level diagnostics accessible, affordable, and rapid—especially in under-resourced regions.
 
-> "Empowering health with AI-driven medical solutions."
+> "Empowering global health with intelligent diagnostics."
 
 ---
 
 ## 🎯 Motivation
 
-- Early detection saves lives.
-- Many regions lack access to expert diagnostics.
-- AI can bridge the gap by providing fast, reliable, and affordable analysis.
+- 🌍 Millions lack access to timely medical diagnostics.
+- ⏱️ Early detection significantly improves treatment outcomes.
+- 🤖 AI provides a scalable solution for fast, accurate disease screening.
 
 ---
 
 ## 🛠️ Key Features
 
-- 🤖 **AI-Powered Analysis**: Deep learning models for blood cell image classification
-- 🦠 **Multi-Disease Detection**: Malaria & Leukemia
-- 🔒 **Secure Authentication**: Firebase-based user management
-- 📄 **Automated PDF Reports**: Downloadable, professional diagnostic reports
-- 🌐 **Modern Web UI**: Responsive, user-friendly interface
-- 📊 **Confidence Graphs**: Visualize model certainty
-- 💸 **Affordable & Fast**: Instant results, low cost
+- 🤖 **AI-Powered Detection** – Trained deep learning models for disease classification  
+- 🦠 **Multi-Disease Analysis** – Supports Malaria & Leukemia diagnosis  
+- 🔐 **Secure Auth System** – Firebase authentication for account protection  
+- 📄 **Auto-Generated PDF Reports** – Printable diagnostics with result summaries  
+- 📊 **Confidence Graphs** – Visual breakdown of prediction confidence  
+- 💻 **Modern Web Interface** – Responsive UI for ease of use  
+- 💸 **Affordable & Fast** – Instant output, no expert needed  
 
 ---
 
@@ -45,7 +44,7 @@
 
 | Frontend | Backend | AI/ML | Auth/DB | Reports |
 |----------|---------|-------|---------|---------|
-| ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white) ![JS](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black) ![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?logo=bootstrap&logoColor=white) | ![Flask](https://img.shields.io/badge/Flask-000000?logo=flask&logoColor=white) | ![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?logo=tensorflow&logoColor=white) ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?logo=pytorch&logoColor=white) | ![Firebase](https://img.shields.io/badge/Firebase-FFCA28?logo=firebase&logoColor=black) | ![FPDF](https://img.shields.io/badge/FPDF-003366?logo=pdf&logoColor=white) |
+| HTML5, CSS3, JavaScript, Bootstrap | Flask (Python) | TensorFlow, PyTorch | Firebase | FPDF |
 
 ---
 
@@ -53,81 +52,94 @@
 
 ```mermaid
 graph TD;
-  A[User] -->|Uploads Image| B(Frontend: Web UI)
-  B -->|Sends to| C(Backend: Flask API)
+  A[User] -->|Uploads Image| B(Frontend)
+  B -->|Send Request| C(Flask Backend)
   C -->|Preprocess| D1[Malaria Model (Keras)]
   C -->|Preprocess| D2[Leukemia Model (PyTorch)]
-  D1 -->|Prediction| E[Result Handler]
-  D2 -->|Prediction| E
+  D1 -->|Predict| E[Results Handler]
+  D2 -->|Predict| E
   E -->|Generate| F[PDF Report]
   F -->|Download| A
-  C -->|Auth| G[Firebase]
+  C -->|Authenticate| G[Firebase]
 ```
 
 ---
 
-## 🧬 Model Details
+## 🧬 AI Model Details
 
-### 1. **Malaria Detection Model**
-- **Dataset:** iarunava/cell-images-for-detecting-malaria (Kaggle)
-- **Preprocessing:**
-  - Rescale, rotation, shift, shear, zoom, flip
-  - Target size: 150x150 px
-- **Architecture:**
-  - 4 Conv2D layers (32, 64, 128, 128 filters)
-  - MaxPooling after each
-  - Flatten → Dense(512) → Dense(1, sigmoid)
-- **Parameters:** ~5.5M (trainable)
-- **Training:**
-  - Batch size: 32, Epochs: 10
-  - Validation accuracy: ~95.3%
-- **Output:** Parasitized / Uninfected
+### 🧪 Malaria Detection Model
+| Attribute   | Value |
+|-------------|-------|
+| Dataset     | Kaggle – Malaria Cell Images |
+| Input Size  | 150×150 px |
+| Layers      | 4 Conv2D → MaxPooling → Flatten → Dense(512) → Output |
+| Params      | ~5.5M |
+| Training    | Batch: 32, Epochs: 10 |
+| Accuracy    | ~95.3% |
+| Output      | Parasitized / Uninfected |
 
-### 2. **Leukemia Detection Model**
-- **Dataset:** mohammadamireshraghi/blood-cell-cancer-all-4class (Kaggle)
-- **Preprocessing:**
-  - Resize to 224x224, ToTensor, Normalize (ImageNet stats)
-- **Architecture:**
-  - 3 Conv2d layers (32, 64, 128 filters)
-  - MaxPooling after each
-  - Flatten → Dense(256) → Dropout(0.5) → Dense(4)
-- **Parameters:** ~25.8M (trainable)
-- **Training:**
-  - Batch size: 16, Epochs: 10
-  - Validation accuracy: up to 96.2%
-- **Output:** Benign, [Malignant] Pre-B, Pro-B, Early Pre-B
+### 🧪 Leukemia Detection Model
+| Attribute   | Value |
+|-------------|-------|
+| Dataset     | Kaggle – Blood Cell Cancer ALL |
+| Input Size  | 224×224 px |
+| Layers      | 3 Conv2D → MaxPooling → Flatten → Dense(256) → Dropout(0.5) → Output |
+| Params      | ~25.8M |
+| Training    | Batch: 16, Epochs: 10 |
+| Accuracy    | ~96.2% |
+| Output      | Benign, Malignant Pre-B, Pro-B, Early Pre-B |
+
+---
+
+## 📊 Sample Confidence Graph (Markdown Representation)
+
+**Malaria Detection Confidence (Example)**
+```
+Parasitized: ██████████████████ 94.3%
+Uninfected : █░░░░░░░░░░░░░░░░ 5.7%
+```
+
+**Leukemia Detection Confidence (Example)**
+```
+Benign        : ██████████████ 40.1%
+Pre-B         : ███████        20.8%
+Pro-B         : █████          16.7%
+Early Pre-B   : █████████      22.4%
+```
 
 ---
 
 ## 🧑‍💻 User Workflow
 
-1. **Sign Up / Log In** (Firebase Auth)
-2. **Upload Blood Cell Image**
-3. **AI Model Analysis** (Malaria/Leukemia)
-4. **Download PDF Report** (with results & confidence graph)
+1. Register / Login via Firebase
+2. Upload blood cell image for analysis
+3. Select disease (Malaria or Leukemia)
+4. Receive prediction results with confidence graph
+5. Download a PDF report of the analysis
 
 ---
 
 ## 🚀 Quick Start
 
 ```bash
-git clone https://github.com/yourusername/wellnessnexus.git
+git clone https://github.com/hakgs1234/Wellnessnexus-Documentation.git
 cd wellnessnexus
 pip install -r requirements.txt
-# Set up Firebase config (see below)
+# Add Firebase credentials (see below)
 python app.py
 ```
 
 ---
 
 ## 🔐 Firebase Setup
-- Create a Firebase project
-- Add your Firebase config to the frontend and backend
-- Enable Authentication and Realtime Database
+- Create a project at Firebase Console
+- Enable Email/Password Authentication
+- Add Firebase Config to both frontend and backend
+- Set up Firestore / Realtime Database if needed
 
 ---
 
-## 📂 Project Structure
+## 📁 Project Structure
 
 ```
 wellnessnexus/
@@ -135,76 +147,70 @@ wellnessnexus/
 │   ├── css/
 │   ├── js/
 │   ├── img/
-│   └── lib/
 ├── templates/
 │   ├── index.html
 │   ├── form.html
 │   ├── about.html
-│   └── ...
 ├── models/
 │   ├── final_malaria_model.keras
 │   └── leukemia_detection_cnn.pth
 ├── malaria_routes.py
 ├── leukemia_routes.py
 ├── app.py
-└── ...
+├── requirements.txt
+└── README.md
 ```
 
 ---
 
-## ❓ FAQ: Project Defense Questions
+## ❓ FAQ – Defense Questions
 
 ### Frontend
-1. What technologies did you use for the frontend?
-2. How does a user interact with your platform?
-3. How is user authentication handled?
-4. How do you handle file uploads?
-5. How do you display results and reports?
+- What technologies power the UI?
+- How is user interaction managed?
+- How is authentication implemented?
 
 ### Backend
-6. What framework did you use for the backend?
-7. How are your routes organized?
-8. How do you preprocess images?
-9. How do you load and use your AI models?
-10. How do you generate PDF reports?
-11. How do you ensure security and privacy?
+- Why did you choose Flask?
+- How are the routes organized?
+- How are uploaded images handled?
 
-### Models
-12. What datasets did you use?
-13. What preprocessing steps are applied?
-14. Describe your model architectures.
-15. How many parameters do your models have?
-16. What are your models' validation accuracies?
+### AI Models
+- What datasets were used?
+- Describe the preprocessing techniques.
+- What architecture does each model use?
+- What are the model accuracies?
 
 ---
 
 ## 🤝 Contributing
-
-We welcome contributions! Please fork the repo, create a branch, and submit a pull request. For major changes, open an issue first to discuss what you’d like to change.
+We welcome contributions from the community. To contribute:
+- Fork the repository
+- Create a new branch (`git checkout -b feature-xyz`)
+- Commit your changes
+- Push to your branch (`git push origin feature-xyz`)
+- Open a Pull Request
 
 ---
 
 ## 📜 License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License.
 
 ---
 
 ## 📞 Contact
-
-- Email: wellnessnuxes@gmail.com
-- Phone: 0317 7990549 | 03409834157
-- [LinkedIn @sirihive](https://www.linkedin.com/company/sirihive/)
-- 🌐 [Github @Sirihive](https://github.com/sirihive/sirihive)
+- 📧 Email: wellnessnuxes@gmail.com
+- 📱 Phone: +92 317 7990549 | +92 340 9834157
+- 🔗 [LinkedIn – SiriHive](https://www.linkedin.com/company/sirihive/)
+- 🧠 [GitHub – SiriHive](https://github.com/izhansajid)
 
 ---
 
 ## 🙏 Acknowledgments
-
-- SiriHive – Our future company, InshaAllah, and the vision behind this project
-
-- All contributors, mentors, and supporters who made this journey possible
+- SiriHive – Envisioned as our future company, InshaAllah. The inspiration and vision behind this project
+- Our mentors, supporters, and open-source communities who guided and empowered us
+- Special thanks to the medical AI community and data contributors
 
 ---
 
-Developed with ❤️ by SiriHive
+Developed with ❤️ by Team SiriHive
